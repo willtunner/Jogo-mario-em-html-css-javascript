@@ -1,0 +1,68 @@
+/** reset */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.game-board {
+    width: 80%;
+    height: 300px;
+    border: 1px solid #333;
+    margin: 20vh auto ;
+    position: relative;
+    overflow: hidden;
+    background-color: cadetblue;
+}
+
+/** img tubo*/
+.pipe {
+    position: absolute;/* respeita delimitações do relative, div pai*/
+    bottom: 0;
+    width: 80px;
+    animation: pipe-animation 1.5s infinite linear; /* chama animação */
+}
+
+.mario {
+    width: 150px;
+    position: absolute;
+    bottom: 0;
+}
+
+.jump {
+    animation: jump 500ms ease-out;
+}
+
+/* Para fazer animação do tubo se mover da direita para esquerda*/
+@keyframes pipe-animation {
+    from {
+        right: -80px;/* começa */
+    }
+
+    to {
+        right: 100%; /* termina */
+    }
+}
+
+/* Para fazer animação do pulo, 3 passos */
+@keyframes jump {
+    0% {
+        bottom: 0;
+    }
+
+    40% {
+        bottom: 180px;
+    }
+
+    50% {
+        bottom: 180px;
+    }
+
+    60% {
+        bottom: 180px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
